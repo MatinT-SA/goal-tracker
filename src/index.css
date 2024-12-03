@@ -5,6 +5,8 @@
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 
 :root {
+  --color-dark-blue: #03424c;
+  --color-light-blue: #138091;
 }
 
 * {
@@ -27,7 +29,7 @@ body {
 }
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
-/* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ App ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
+/* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ Header ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 
 .custom-shape-divider-top-1733231526 {
@@ -49,4 +51,73 @@ body {
 
 .custom-shape-divider-top-1733231526 .shape-fill {
   fill: #e18006;
+}
+
+.header img {
+  max-width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: 1000;
+  width: 150px;
+  top: 2rem;
+  left: 4rem;
+  border-radius: 20%;
+}
+
+.header-nav {
+  right: 4rem;
+  top: 3.5rem;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+}
+
+.header-nav input {
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 300px;
+  padding-right: 50px;
+  box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.1);
+  transition: 0.2s box-shadow ease;
+}
+
+.header-nav button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: var(--color-dark-blue);
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  padding: 0;
+  color: #888;
+  transition: 0.2s ease-out;
+}
+
+.header-nav button:hover {
+  background: var(--color-light-blue);
+}
+
+.search-icon {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.header-nav input:focus {
+  outline: 1px outset var(--color-dark-blue);
+  box-shadow: 0 2px 12px 5px rgba(0, 0, 0, 0.2);
 }
