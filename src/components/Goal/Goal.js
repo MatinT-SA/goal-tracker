@@ -1,3 +1,3 @@
 export function Goal({ goal }) {
-  return <li>{goal.goalName}</li>;
+  return <li className="goal">{goal.goalName}</li>;
 }

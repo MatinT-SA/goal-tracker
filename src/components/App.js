@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Header } from "../components/Header/Header";
 import { GoalList } from "./Goal/GoalList";
+import { GoalForm } from "./Goal/GoalForm";
 
 export const initialGoals = [
   {
@@ -27,9 +28,12 @@ export default function App() {
   const [goals, setGoals] = useState(initialGoals);
 
   return (
-    <div className="app">
+    <>
       <Header />
-      <GoalList goals={goals} />
-    </div>
+      <div className="app">
+        <GoalForm />
+        <GoalList goals={goals} />
+      </div>
+    </>
   );
 }
