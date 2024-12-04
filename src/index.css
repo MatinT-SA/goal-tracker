@@ -29,6 +29,20 @@ body {
 }
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
+/* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ App ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
+/* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
+
+.app {
+  min-width: 85vw;
+  min-height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6rem;
+  margin: auto 0;
+  align-items: center;
+}
+
+/* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 /* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ Header ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 
@@ -146,4 +160,16 @@ body {
 .goalList__text {
   font-size: 1.8rem;
   font-weight: 700;
+}
+
+.down-layer {
+  background: blue;
+  padding: 0 0 1rem 0;
+}
+
+.goalList {
+  background: red;
+  padding: 10rem;
+  transform: translate(4%, 10%);
+  opacity: 0.8;
 }
