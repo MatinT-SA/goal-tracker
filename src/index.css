@@ -89,7 +89,7 @@ body {
   transition: 0.2s box-shadow ease;
 }
 
-.header-nav button {
+.button {
   position: absolute;
   right: 0;
   top: 0;
@@ -120,4 +120,30 @@ body {
 .header-nav input:focus {
   outline: 1px outset var(--color-dark-blue);
   box-shadow: 0 2px 12px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
+/* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ GoalList ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
+/* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
+
+.add-goal {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  background: var(--color-dark-blue);
+  transition: 0.2s ease-in-out, 0.5s box-shadow ease;
+  color: white;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.add-goal:hover {
+  background: var(--color-light-blue);
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.3);
+}
+
+.goalList__text {
+  font-size: 1.8rem;
+  font-weight: 700;
 }

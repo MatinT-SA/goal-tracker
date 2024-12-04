@@ -4,6 +4,7 @@ export default function App() {
   return (
     <div>
       <Header />
+      <GoalList />
     </div>
   );
 }
@@ -16,9 +17,9 @@ function Header() {
       <nav className="header-nav">
         <div className="search-box">
           <input type="text" placeholder="Search..." />
-          <button>
+          <Button className="button">
             <FaSearch className="search-icon" />
-          </button>
+          </Button>
         </div>
       </nav>
 
@@ -39,12 +40,23 @@ function Header() {
   );
 }
 
+function Button({ children, className }) {
+  return <button className={className}>{children}</button>;
+}
+
 function GoalForm() {
   return <div>form goal</div>;
 }
 
 function GoalList() {
-  return <div>goal list</div>;
+  return (
+    <div>
+      <p className="goalList__text">
+        You don't have any goals 😢{" "}
+        <Button className="add-goal">Wanna add?</Button>
+      </p>
+    </div>
+  );
 }
 
 function GoalItem() {
