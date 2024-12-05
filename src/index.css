@@ -192,32 +192,60 @@ body {
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 
 .goal {
-  color: white;
   list-style: none;
   margin: 1rem 0;
-}
-
-.goal-container {
-  display: grid;
-  grid-template-areas:
-    "name badge"
-    "date date"
-    "notes notes";
-  grid-template-columns: auto auto;
-  gap: 0.5rem;
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+  color: #333;
+  background-color: #fff;
+  position: relative;
 }
 
-/* Goal Name Styling */
+.goal-container {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "name addedDate"
+    "notes dueDate";
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.priority-ribbon {
+  position: absolute;
+  top: 1rem;
+  left: -3rem;
+  background-color: red;
+  height: 30px;
+  width: 70px;
+  transform: rotate(-45deg);
+  transform-origin: top left;
+  z-index: 2;
+}
+
+.goal-container.priority-high .priority-ribbon {
+  background-color: red;
+}
+
+.goal-container.priority-medium .priority-ribbon {
+  background-color: orange;
+}
+
+.goal-container.priority-low .priority-ribbon {
+  background-color: green;
+}
+
 .goal-name {
   grid-area: name;
   font-size: 1.25rem;
   font-weight: bold;
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .goal-name.checked {
@@ -225,42 +253,35 @@ body {
   color: #888;
 }
 
-/* Priority Badge Styling */
-.priority-badge {
-  grid-area: badge;
-  padding: 0.2rem 0.5rem;
-  border-radius: 5px;
-  color: white;
-  text-transform: capitalize;
-  font-size: 0.9rem;
-  align-self: start;
-}
-
-.priority-high {
-  background-color: red;
-}
-
-.priority-medium {
-  background-color: orange;
-}
-
-.priority-low {
-  background-color: green;
-}
-
-/* Due Date Styling */
-.due-date {
-  grid-area: date;
+.dates {
   font-size: 0.9rem;
   color: #555;
-  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
 }
 
-/* Notes Styling */
+.added-date,
+.due-date {
+  display: inline-block;
+  font-size: 0.85rem;
+}
+
+.added-date {
+  grid-area: addedDate;
+}
+
+.due-date {
+  grid-area: dueDate;
+}
+
 .notes {
   grid-area: notes;
   font-style: italic;
   font-size: 0.85rem;
   color: #333;
   margin: 0;
+  position: relative;
+  z-index: 1;
 }

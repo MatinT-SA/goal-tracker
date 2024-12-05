@@ -1,24 +1,21 @@
 export function Goal({ goal }) {
-  const { goalName, priority, dueDate, notes, checked } = goal;
+  const { goalName, priority, dueDate, notes, checked, addedDate } = goal;
 
-  // Priority Badge Class
   const priorityClass = `priority-${priority}`;
 
   return (
     <li className="goal">
-      <div className="goal-container">
-        {/* Goal Name */}
+      <div className={`goal-container ${priorityClass}`}>
+        <div className="priority-ribbon"></div>
         <h3 className={`goal-name ${checked ? "checked" : ""}`}>{goalName}</h3>
-
-        {/* Priority Badge */}
-        <span className={`priority-badge ${priorityClass}`}>{priority}</span>
-
-        {/* Due Date */}
-        <p className="due-date">
-          Due: {new Date(dueDate).toLocaleDateString()}
+        <p className="dates">
+          <span className="added-date">
+            Added: {new Date(addedDate).toLocaleDateString()}
+          </span>
+          <span className="due-date">
+            Due: {new Date(dueDate).toLocaleDateString()}
+          </span>
         </p>
-
-        {/* Notes */}
         {notes && <p className="notes">{notes}</p>}
       </div>
     </li>
