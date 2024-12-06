@@ -1,3 +1,5 @@
+import { IoMdRocket } from "react-icons/io";
+
 export function Goal({ goal }) {
   const { goalName, priority, dueDate, notes, checked, addedDate } = goal;
 
@@ -6,6 +8,7 @@ export function Goal({ goal }) {
   return (
     <li className="goal">
       <div className={`goal-container ${priorityClass}`}>
+        <IoMdRocket className="icon-goal" />
         <div className="priority-ribbon"></div>
         <h3 className={`goal-name ${checked ? "checked" : ""}`}>{goalName}</h3>
         <span className="added-date">

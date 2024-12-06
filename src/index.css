@@ -6,6 +6,7 @@
 
 :root {
   --color-dark-blue: #03424c;
+  --color-complement-blue: #072237;
   --color-light-blue: #138091;
 }
 
@@ -183,16 +184,16 @@ body {
 }
 
 .goalList::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
+  width: 10px;
 }
 
 .goalList::-webkit-scrollbar-thumb {
-  background: var(--color-dark-blue); /* Color of the scrollbar thumb */
-  border-radius: 4px; /* Rounded edges for a smoother look */
+  background: var(--color-dark-blue);
+  border-radius: 4px;
 }
 
 .goalList::-webkit-scrollbar-thumb:hover {
-  background: var(--color-light-blue); /* Thumb color on hover */
+  background: var(--color-complement-blue);
 }
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
@@ -226,11 +227,12 @@ body {
 .goal-container {
   position: relative;
   display: grid;
-  grid-template-columns: auto auto;
+  justify-content: space-around;
+  grid-template-columns: 0.6fr 3.5fr 1fr;
   grid-template-rows: auto auto;
   grid-template-areas:
-    "name addedDate"
-    "notes dueDate";
+    "goalIcon name addedDate"
+    "goalIcon notes dueDate";
   gap: 0.5rem;
   padding: 1rem;
   border-radius: 8px;
@@ -296,4 +298,10 @@ body {
   margin: 0;
   position: relative;
   z-index: 1;
+}
+
+.icon-goal {
+  grid-area: goalIcon;
+  margin: 0.3rem 0 0 1.5rem;
+  font-size: 3rem;
 }
