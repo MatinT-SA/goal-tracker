@@ -207,6 +207,8 @@ body {
 .goal-container {
   position: relative;
   display: grid;
+  grid-template-columns: auto auto; /* Two columns */
+  grid-template-rows: auto auto; /* Two rows */
   grid-template-areas:
     "name addedDate"
     "notes dueDate";
@@ -253,27 +255,18 @@ body {
   color: #888;
 }
 
-.dates {
-  font-size: 0.9rem;
-  color: #555;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  z-index: 1;
-}
-
-.added-date,
-.due-date {
-  display: inline-block;
-  font-size: 0.85rem;
-}
-
 .added-date {
   grid-area: addedDate;
+  font-size: 0.85rem;
+  color: #555;
+  display: inline-block;
 }
 
 .due-date {
   grid-area: dueDate;
+  font-size: 0.85rem;
+  color: #555;
+  display: inline-block;
 }
 
 .notes {
