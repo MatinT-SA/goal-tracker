@@ -163,13 +163,16 @@ body {
 }
 
 .down-layer {
-  background: blue;
+  background: var(--color-dark-blue);
   padding: 0 0 1rem 0;
   border-radius: 1rem 20px 10px 5rem;
+  z-index: 100;
+  position: relative;
+  top: 2.5rem;
 }
 
 .goalList {
-  background: red;
+  background: var(--color-light-blue);
   padding: 10rem;
   transform: translate(4%, 10%);
   opacity: 0.95;
@@ -230,15 +233,15 @@ body {
 }
 
 .goal-container.priority-high .priority-ribbon {
-  background-color: red;
+  background-color: #ff2400;
 }
 
 .goal-container.priority-medium .priority-ribbon {
-  background-color: orange;
+  background-color: #f28500;
 }
 
 .goal-container.priority-low .priority-ribbon {
-  background-color: green;
+  background-color: #32cd32;
 }
 
 .goal-name {

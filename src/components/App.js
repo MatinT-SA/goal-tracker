@@ -22,6 +22,15 @@ export const initialGoals = [
     notes: null,
     addedDate: "2024-12-04T08:00",
   },
+  {
+    id: 3,
+    goalName: "Music",
+    checked: true,
+    priority: "low",
+    dueDate: null,
+    notes: "Listening to Eminem",
+    addedDate: "2024-12-06T10:00",
+  },
 ];
 
 export default function App() {
