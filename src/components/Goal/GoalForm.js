@@ -1,3 +1,5 @@
+import { Button } from "../UI/Button";
+
 export function GoalForm() {
   return (
     <form className="form-add-goal">
@@ -16,6 +18,8 @@ export function GoalForm() {
 
       <label htmlFor="notes">Notes:</label>
       <input type="text" id="notes" />
+
+      <Button className="form-add-goal__btn">Submit</Button>
     </form>
   );
 }
