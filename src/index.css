@@ -172,11 +172,27 @@ body {
 }
 
 .goalList {
+  min-height: 60vh;
+  max-height: 65vh;
+  overflow-y: auto;
   background: var(--color-light-blue);
-  padding: 10rem;
+  padding: 2rem 6rem 2rem 5rem;
   transform: translate(4%, 10%);
   opacity: 0.95;
   border-radius: 0.5rem 10px 5px 2.5rem;
+}
+
+.goalList::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.goalList::-webkit-scrollbar-thumb {
+  background: var(--color-dark-blue); /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded edges for a smoother look */
+}
+
+.goalList::-webkit-scrollbar-thumb:hover {
+  background: var(--color-light-blue); /* Thumb color on hover */
 }
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
@@ -210,8 +226,8 @@ body {
 .goal-container {
   position: relative;
   display: grid;
-  grid-template-columns: auto auto; /* Two columns */
-  grid-template-rows: auto auto; /* Two rows */
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   grid-template-areas:
     "name addedDate"
     "notes dueDate";

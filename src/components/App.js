@@ -25,7 +25,7 @@ export const initialGoals = [
   {
     id: 3,
     goalName: "Music",
-    checked: true,
+    checked: false,
     priority: "low",
     dueDate: null,
     notes: "Listening to Eminem",
