@@ -7,7 +7,7 @@ export function GoalList({ goals }) {
     <div className="down-layer">
       <ul className="goalList">
         {initialGoals ? (
-          initialGoals.map((goal) => <Goal goal={goal} />)
+          initialGoals.map((goal) => <Goal goal={goal} key={goal.id} />)
         ) : (
           <p className="goalList__text">
             You don't have any goals 😢{" "}
