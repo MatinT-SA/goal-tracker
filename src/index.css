@@ -216,6 +216,11 @@ body {
   border-radius: 1rem;
   position: relative;
   top: 2.5rem;
+  transition: 0.2s ease;
+}
+
+.form-add-goal:hover {
+  background: #107585;
 }
 
 .form-add-goal label {
