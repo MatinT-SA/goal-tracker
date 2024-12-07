@@ -36,11 +36,15 @@ export const initialGoals = [
 export default function App() {
   const [goals, setGoals] = useState(initialGoals);
 
+  function handleAddGoal(goal) {
+    setGoals((goals) => [...goals, goal]);
+  }
+
   return (
     <>
       <Header />
       <div className="app">
-        <GoalForm />
+        <GoalForm onAddGoal={handleAddGoal} />
         <GoalList goals={goals} />
       </div>
     </>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "../UI/Button";
 
-export function GoalForm() {
+export function GoalForm({ onAddGoal }) {
   const [goalName, setGoalName] = useState("");
   const [priority, setPriority] = useState("medium");
   const [dueDate, setDueDate] = useState("");
@@ -22,7 +22,7 @@ export function GoalForm() {
       addedDate: new Date().toISOString(),
     };
 
-    console.log(newGoal);
+    onAddGoal(newGoal);
 
     setGoalName("");
     setPriority("medium");
