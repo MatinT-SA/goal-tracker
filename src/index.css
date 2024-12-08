@@ -292,7 +292,7 @@ body {
   position: relative;
   display: grid;
   justify-content: space-around;
-  grid-template-columns: 0.6fr 3.5fr 1fr;
+  grid-template-columns: 0.4fr 2.7fr 1fr;
   grid-template-rows: auto auto;
   grid-template-areas:
     "goalIcon name addedDate"

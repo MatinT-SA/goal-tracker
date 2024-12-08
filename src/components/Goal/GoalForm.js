@@ -19,7 +19,7 @@ export function GoalForm({ onAddGoal }) {
       checked: false,
       dueDate: dueDate || null,
       notes: notes || null,
-      addedDate: new Date().toISOString(),
+      addedDate: new Date().toLocaleString(),
     };
 
     onAddGoal(newGoal);
