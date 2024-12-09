@@ -32,6 +32,19 @@ export function GoalForm({ onAddGoal }) {
     setNotes("");
   }
 
+  const roundToNearest5Minutes = (date) => {
+    const minute = Math.ceil(date.getMinutes() / 5) * 5;
+    date.setMinutes(minute);
+    date.setSeconds(0);
+    date.setMilliseconds(0);
+    return date;
+  };
+
+  const currentTimeRounded = roundToNearest5Minutes(new Date());
+
+  const maxTime = new Date();
+  maxTime.setHours(23, 55, 0, 0);
+
   const CustomDateInput = forwardRef(({ onClick }, ref) => (
     <button
       type="button"
@@ -100,6 +113,8 @@ export function GoalForm({ onAddGoal }) {
             timeIntervals={5}
             dateFormat="MMMM d, yyyy h:mm aa"
             minDate={new Date()}
+            minTime={currentTimeRounded}
+            maxTime={maxTime}
             customInput={<CustomDateInput />}
             className="date-picker"
           />
