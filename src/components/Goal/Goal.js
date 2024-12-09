@@ -1,25 +1,13 @@
 import { IoMdRocket } from "react-icons/io";
+import { formatDate } from "../../utils/dateUtils.js";
 
 export function Goal({ goal }) {
   const { goalName, priority, dueDate, notes, checked, addedDate } = goal;
 
   const priorityClass = `priority-${priority}`;
 
-  const formattedAddedDate = new Date(addedDate).toLocaleString("en-US", {
-    weekday: "short",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-
-  const formattedDueDate = dueDate
-    ? new Date(dueDate).toLocaleString("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-      })
-    : "No due date";
+  const formattedAddedDate = formatDate(addedDate);
+  const formattedDueDate = dueDate ? formatDate(dueDate) : "No due date";
 
   return (
     <li className="goal">

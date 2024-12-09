@@ -70,6 +70,7 @@ export function GoalForm({ onAddGoal }) {
         id="goal-name"
         required
         className="goal-name-input"
+        placeholder="E.g: Reading Book"
       />
 
       {/* Form Row for Priority and Due Date */}
@@ -115,6 +116,7 @@ export function GoalForm({ onAddGoal }) {
         onChange={(e) => setNotes(e.target.value)}
         id="notes"
         className="notes-input"
+        placeholder="The Selfish Gene"
       />
 
       {/* Submit Button */}
