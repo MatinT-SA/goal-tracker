@@ -1,5 +1,4 @@
-import { FaSearch } from "react-icons/fa";
-import { Button } from "../UI/Button";
+import { SearchBar } from "./SearchBar";
 
 export function Header() {
   return (
@@ -7,12 +6,7 @@ export function Header() {
       <img src="images/logo.png" alt="Logo" />
 
       <nav className="header-nav">
-        <div className="search-box">
-          <input type="text" placeholder="Search..." />
-          <Button className="button">
-            <FaSearch className="search-icon" />
-          </Button>
-        </div>
+        <SearchBar />
       </nav>
 
       <div className="custom-shape-divider-top-1733231526">
