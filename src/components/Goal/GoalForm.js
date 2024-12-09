@@ -59,41 +59,65 @@ export function GoalForm({ onAddGoal }) {
 
   return (
     <form className="form-add-goal" onSubmit={handleSubmit}>
-      <label htmlFor="goal-name">Goal Name:</label>
+      {/* Goal Name */}
+      <label htmlFor="goal-name" className="goal-name-label">
+        Goal Name:
+      </label>
       <input
         type="text"
         value={goalName}
         onChange={(e) => setGoalName(e.target.value)}
+        id="goal-name"
         required
+        className="goal-name-input"
       />
 
-      <label htmlFor="priority">Priority:</label>
-      <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-        <option value="high">High</option>
-        <option value="medium">Medium</option>
-        <option value="low">Low</option>
-      </select>
+      {/* Form Row for Priority and Due Date */}
+      <div className="form-row">
+        <div className="form-column">
+          <label htmlFor="priority">Priority:</label>
+          <select
+            id="priority"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+            className="priority-select"
+          >
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
 
-      <label htmlFor="due-date">Due Date:</label>
-      <DatePicker
-        id="due-date"
-        selected={dueDate}
-        onChange={setDueDate}
-        showTimeSelect
-        timeFormat="HH:mm"
-        timeIntervals={5}
-        dateFormat="MMMM d, yyyy h:mm aa"
-        minDate={new Date()}
-        customInput={<CustomDateInput />}
-      />
+        <div className="form-column">
+          <label htmlFor="due-date">Due Date:</label>
+          <DatePicker
+            id="due-date"
+            selected={dueDate}
+            onChange={setDueDate}
+            showTimeSelect
+            timeFormat="HH:mm"
+            timeIntervals={5}
+            dateFormat="MMMM d, yyyy h:mm aa"
+            minDate={new Date()}
+            customInput={<CustomDateInput />}
+            className="date-picker"
+          />
+        </div>
+      </div>
 
-      <label htmlFor="notes">Notes:</label>
+      {/* Notes */}
+      <label htmlFor="notes" className="notes-label">
+        Notes:
+      </label>
       <input
         type="text"
         value={notes}
         onChange={(e) => setNotes(e.target.value)}
+        id="notes"
+        className="notes-input"
       />
 
+      {/* Submit Button */}
       <Button className="form-add-goal__btn">Submit</Button>
     </form>
   );

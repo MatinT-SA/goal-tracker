@@ -208,7 +208,7 @@ body {
 .form-add-goal {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  gap: 2.5rem;
+  gap: 2rem;
   align-items: center;
   background: var(--color-light-blue);
   color: white;
@@ -217,6 +217,11 @@ body {
   position: relative;
   top: 2.5rem;
   transition: 0.2s ease;
+  grid-template-areas:
+    "goal-name-label goal-name"
+    "priority-due priority-due"
+    "notes-label notes"
+    "submit submit";
 }
 
 .form-add-goal:hover {
@@ -257,6 +262,7 @@ body {
   outline-offset: 0px;
   text-shadow: none;
   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  grid-area: submit;
 }
 
 .form-add-goal__btn:hover {
@@ -268,7 +274,58 @@ body {
   letter-spacing: 3px;
 }
 
-/* Custom Date Button (DatePicker) */
+.goal-name-label {
+  grid-area: goal-name-label;
+}
+
+.goal-name-input {
+  grid-area: goal-name;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-area: priority-due;
+}
+
+.form-column {
+  display: flex;
+  gap: 4.5rem;
+  align-items: center;
+  justify-self: flex-start;
+}
+
+.form-row label {
+  font-size: 1.2rem;
+}
+
+.priority-select {
+  grid-area: priority;
+}
+
+.date-picker {
+  grid-area: due-date;
+}
+
+.priority-select,
+.date-picker {
+  font-size: 1.2rem;
+  padding: 0.5rem 1.3rem;
+  border-radius: 5px;
+}
+
+.notes-label {
+  grid-area: notes-label;
+}
+
+.notes-input {
+  grid-area: notes;
+  width: 100%;
+  max-width: 400px;
+}
+
 .custom-date-picker-button {
   background-color: var(--color-light-blue);
   border: none;
@@ -290,75 +347,14 @@ body {
 
 .custom-date-picker-button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.9);
 }
 
 .calendar-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   color: white;
 }
-
-/* .custom-date-button {
-  font-family: inherit;
-  font-size: 1.2rem;
-  padding: 0.5rem 1.3rem;
-  color: #2b2d2e;
-  background-color: white;
-  border: 1px solid var(--color-border);
-  border-radius: 5px;
-  text-align: left;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.custom-date-button:hover {
-  border-color: var(--color-hover-border);
-  background-color: var(--color-light-blue);
-  color: white;
-}
-
-.custom-date-button:focus {
-  outline: none;
-  border-color: var(--color-focus-border);
-  box-shadow: 0 0 0 2px var(--color-focus-border-light);
-}
-
-.react-datepicker {
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: var(--color-light-blue);
-}
-
-.react-datepicker__header {
-  background-color: var(--color-dark-blue);
-  color: white;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.react-datepicker__day--selected,
-.react-datepicker__day--keyboard-selected {
-  background-color: var(--color-hover-border);
-  color: white;
-  border-radius: 50%;
-}
-
-.react-datepicker__day:hover {
-  background-color: var(--color-hover-border);
-  color: white;
-}
-
-.react-datepicker__time-container
-  .react-datepicker__time
-  .react-datepicker__time-box
-  ul.react-datepicker__time-list
-  li.react-datepicker__time-list-item:hover {
-  background-color: var(--color-light-blue);
-  color: white;
-} */
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 /* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ Goal ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
