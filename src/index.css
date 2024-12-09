@@ -82,6 +82,13 @@ body {
   top: 2rem;
   left: 4rem;
   border-radius: 20%;
+  transition: 0.3s ease-in-out;
+}
+
+.header img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .header-nav {
