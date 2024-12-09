@@ -269,7 +269,37 @@ body {
 }
 
 /* Custom Date Button (DatePicker) */
-.custom-date-button {
+.custom-date-picker-button {
+  background-color: var(--color-light-blue);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-date-picker-button:hover {
+  background-color: var(--color-dark-blue);
+  transform: scale(1.1);
+}
+
+.custom-date-picker-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.calendar-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+/* .custom-date-button {
   font-family: inherit;
   font-size: 1.2rem;
   padding: 0.5rem 1.3rem;
@@ -328,7 +358,7 @@ body {
   li.react-datepicker__time-list-item:hover {
   background-color: var(--color-light-blue);
   color: white;
-}
+} */
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 /* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ Goal ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
