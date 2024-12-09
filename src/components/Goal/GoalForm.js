@@ -2,6 +2,7 @@ import { useState, forwardRef } from "react";
 import { Button } from "../UI/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { roundToNearest5Minutes, getMaxTime } from "../../utils/timeUtils";
 
 export function GoalForm({ onAddGoal }) {
   const [goalName, setGoalName] = useState("");
@@ -32,18 +33,9 @@ export function GoalForm({ onAddGoal }) {
     setNotes("");
   }
 
-  const roundToNearest5Minutes = (date) => {
-    const minute = Math.ceil(date.getMinutes() / 5) * 5;
-    date.setMinutes(minute);
-    date.setSeconds(0);
-    date.setMilliseconds(0);
-    return date;
-  };
+  const currentTimeRound = roundToNearest5Minutes(new Date());
 
-  const currentTimeRounded = roundToNearest5Minutes(new Date());
-
-  const maxTime = new Date();
-  maxTime.setHours(23, 55, 0, 0);
+  const maxTime = getMaxTime();
 
   const CustomDateInput = forwardRef(({ onClick }, ref) => (
     <button
@@ -113,7 +105,7 @@ export function GoalForm({ onAddGoal }) {
             timeIntervals={5}
             dateFormat="MMMM d, yyyy h:mm aa"
             minDate={new Date()}
-            minTime={currentTimeRounded}
+            minTime={currentTimeRound}
             maxTime={maxTime}
             customInput={<CustomDateInput />}
             className="date-picker"

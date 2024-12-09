@@ -249,6 +249,10 @@ body {
   grid-area: priority;
 }
 
+.form-add-goal select:focus {
+  box-shadow: 0 0 10px 2px var(--color-complement-blue);
+}
+
 .form-add-goal__btn {
   background: var(--color-dark-blue);
   border-radius: 5px;
