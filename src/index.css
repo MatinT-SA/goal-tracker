@@ -240,9 +240,6 @@ body {
   transition: 0.3s;
 }
 
-.form-add-goal input {
-}
-
 .form-add-goal__btn {
   background: var(--color-dark-blue);
   border-radius: 5px;
@@ -269,6 +266,68 @@ body {
   outline-offset: 15px;
   text-shadow: 1px 1px 2px #427388;
   letter-spacing: 3px;
+}
+
+/* Custom Date Button (DatePicker) */
+.custom-date-button {
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.3rem;
+  color: #2b2d2e;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.custom-date-button:hover {
+  border-color: var(--color-hover-border);
+  background-color: var(--color-light-blue);
+  color: white;
+}
+
+.custom-date-button:focus {
+  outline: none;
+  border-color: var(--color-focus-border);
+  box-shadow: 0 0 0 2px var(--color-focus-border-light);
+}
+
+.react-datepicker {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-light-blue);
+}
+
+.react-datepicker__header {
+  background-color: var(--color-dark-blue);
+  color: white;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--color-hover-border);
+  color: white;
+  border-radius: 50%;
+}
+
+.react-datepicker__day:hover {
+  background-color: var(--color-hover-border);
+  color: white;
+}
+
+.react-datepicker__time-container
+  .react-datepicker__time
+  .react-datepicker__time-box
+  ul.react-datepicker__time-list
+  li.react-datepicker__time-list-item:hover {
+  background-color: var(--color-light-blue);
+  color: white;
 }
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */

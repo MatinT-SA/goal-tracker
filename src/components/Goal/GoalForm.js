@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { Button } from "../UI/Button";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export function GoalForm({ onAddGoal }) {
   const [goalName, setGoalName] = useState("");
   const [priority, setPriority] = useState("medium");
-  const [dueDate, setDueDate] = useState("");
+  const [dueDate, setDueDate] = useState(null);
   const [notes, setNotes] = useState("");
 
   function handleSubmit(e) {
@@ -26,9 +28,20 @@ export function GoalForm({ onAddGoal }) {
 
     setGoalName("");
     setPriority("medium");
-    setDueDate("");
+    setDueDate(null);
     setNotes("");
   }
+
+  const CustomDateInput = forwardRef(({ value, onClick, className }, ref) => (
+    <button
+      type="button"
+      onClick={onClick}
+      ref={ref}
+      className={`custom-date-button ${className}`}
+    >
+      {value || "Select due date and time"}
+    </button>
+  ));
 
   return (
     <form className="form-add-goal" onSubmit={handleSubmit}>
@@ -48,10 +61,16 @@ export function GoalForm({ onAddGoal }) {
       </select>
 
       <label htmlFor="due-date">Due Date:</label>
-      <input
-        type="text"
-        value={dueDate}
-        onChange={(e) => setDueDate(e.target.value)}
+      <DatePicker
+        id="due-date"
+        selected={dueDate}
+        onChange={setDueDate}
+        showTimeSelect
+        timeFormat="HH:mm"
+        timeIntervals={5}
+        dateFormat="MMMM d, yyyy h:mm aa"
+        minDate={new Date()}
+        customInput={<CustomDateInput />}
       />
 
       <label htmlFor="notes">Notes:</label>
