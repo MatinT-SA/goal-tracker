@@ -238,11 +238,15 @@ body {
   font-family: inherit;
   font-size: 1.2rem;
   padding: 0.5rem 1.3rem;
-  text-align: start;
   border: none;
   outline: none;
   border-radius: 5px;
   transition: 0.3s;
+}
+
+.form-add-goal select {
+  padding: 0.5rem 2rem;
+  grid-area: priority;
 }
 
 .form-add-goal__btn {
@@ -280,8 +284,6 @@ body {
 
 .goal-name-input {
   grid-area: goal-name;
-  width: 100%;
-  max-width: 400px;
 }
 
 .form-row {
@@ -297,23 +299,16 @@ body {
   justify-self: flex-start;
 }
 
+.form-column:nth-child(2) {
+  gap: 3rem;
+}
+
 .form-row label {
   font-size: 1.2rem;
 }
 
-.priority-select {
-  grid-area: priority;
-}
-
 .date-picker {
   grid-area: due-date;
-}
-
-.priority-select,
-.date-picker {
-  font-size: 1.2rem;
-  padding: 0.5rem 1.3rem;
-  border-radius: 5px;
 }
 
 .notes-label {
@@ -322,19 +317,18 @@ body {
 
 .notes-input {
   grid-area: notes;
-  width: 100%;
-  max-width: 400px;
 }
 
 .custom-date-picker-button {
   background-color: var(--color-light-blue);
   border: none;
   border-radius: 50%;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -348,6 +342,11 @@ body {
 .custom-date-picker-button:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.9);
+}
+
+.react-datepicker {
+  font-family: inherit !important;
+  font-size: 1rem !important;
 }
 
 .calendar-icon {
