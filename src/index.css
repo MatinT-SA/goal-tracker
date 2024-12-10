@@ -43,7 +43,7 @@ body {
   min-height: 70vh;
   display: grid;
   grid-template-columns: 3fr 4fr;
-  column-gap: 6rem;
+  column-gap: 3rem;
   margin: auto 0;
   align-items: center;
 }
@@ -385,7 +385,7 @@ body {
 .goal {
   list-style: none;
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -404,13 +404,13 @@ body {
   position: relative;
   display: grid;
   justify-content: space-around;
-  grid-template-columns: 0.4fr 2.7fr 1fr;
+  grid-template-columns: 0.4fr 2.4fr 1fr;
   grid-template-rows: auto auto;
   grid-template-areas:
     "goalIcon name addedDate"
     "goalIcon notes dueDate";
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 8px;
 }
 
@@ -440,7 +440,7 @@ body {
 
 .goal-name {
   grid-area: name;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
   position: relative;
@@ -454,14 +454,14 @@ body {
 
 .added-date {
   grid-area: addedDate;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #555;
   display: inline-block;
 }
 
 .due-date {
   grid-area: dueDate;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #555;
   display: inline-block;
 }
@@ -469,7 +469,7 @@ body {
 .notes {
   grid-area: notes;
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #333;
   margin: 0;
   position: relative;
