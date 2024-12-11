@@ -194,7 +194,6 @@ body {
 .goalList {
   min-height: 60vh;
   max-height: 65vh;
-  overflow-y: auto;
   background: var(--color-light-blue);
   padding: 1rem 6rem 1rem 5rem;
   transform: translate(4%, 10%);
@@ -484,7 +483,7 @@ body {
 }
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
-/* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ Goal ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
+/* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ Pagination ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 
 .pagination {

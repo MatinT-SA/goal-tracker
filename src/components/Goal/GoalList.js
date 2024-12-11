@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "../UI/Button";
 import { Goal } from "./Goal";
 
@@ -27,34 +28,42 @@ export function GoalList({ goals }) {
 
   return (
     <div className="down-layer">
-      <ul className="goalList">
-        {goals.length > 0 ? (
-          currentGoals.map((goal) => <Goal goal={goal} key={goal.id} />)
-        ) : (
-          <p className="goalList__text">
-            You don't have any goals 😢{" "}
-            <Button className="add-goal">Wanna add?</Button>
-          </p>
-        )}
+      <motion.ul className="goalList" key={currentPage}>
+        <AnimatePresence>
+          {goals.length > 0 ? (
+            currentGoals.map((goal) => <Goal goal={goal} key={goal.id} />)
+          ) : (
+            <motion.p
+              className="goalList__text"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              You don't have any goals 😢{" "}
+              <Button className="add-goal">Wanna add?</Button>
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </motion.ul>
 
-        {goals.length > goalsPerPage && (
-          <div className="pagination">
-            {currentPage > 1 && (
-              <button onClick={handlePrevPage} className="pagination-btn">
-                ←
-              </button>
-            )}
-            <span>
-              {currentPage} / {totalPages}
-            </span>
-            {currentPage < totalPages && (
-              <button onClick={handleNextPage} className="pagination-btn">
-                →
-              </button>
-            )}
-          </div>
-        )}
-      </ul>
+      {goals.length > goalsPerPage && (
+        <div className="pagination">
+          {currentPage > 1 && (
+            <button onClick={handlePrevPage} className="pagination-btn">
+              ←
+            </button>
+          )}
+          <span>
+            {currentPage} / {totalPages}
+          </span>
+          {currentPage < totalPages && (
+            <button onClick={handleNextPage} className="pagination-btn">
+              →
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }
