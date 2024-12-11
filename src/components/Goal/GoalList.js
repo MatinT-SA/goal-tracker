@@ -36,27 +36,25 @@ export function GoalList({ goals }) {
             <Button className="add-goal">Wanna add?</Button>
           </p>
         )}
+
+        {goals.length > goalsPerPage && (
+          <div className="pagination">
+            {currentPage > 1 && (
+              <button onClick={handlePrevPage} className="pagination-btn">
+                ←
+              </button>
+            )}
+            <span>
+              {currentPage} / {totalPages}
+            </span>
+            {currentPage < totalPages && (
+              <button onClick={handleNextPage} className="pagination-btn">
+                →
+              </button>
+            )}
+          </div>
+        )}
       </ul>
-
-      {goals.length > 0 && (
-        <div className="pagination">
-          {currentPage > 1 && (
-            <button onClick={handlePrevPage} className="pagination-btn">
-              Previous
-            </button>
-          )}
-
-          <span>
-            Page {currentPage} of {totalPages}
-          </span>
-
-          {currentPage < totalPages && (
-            <button onClick={handleNextPage} className="pagination-btn">
-              Next
-            </button>
-          )}
-        </div>
-      )}
     </div>
   );
 }
