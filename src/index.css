@@ -397,7 +397,7 @@ body {
 }
 
 .goal:hover {
-  transform: scale(1.01) translateX(1%) rotate(-0.3deg);
+  transform: scale(1.01) translateX(1%) rotate(-0.3deg) !important;
 }
 
 .goal-container {
