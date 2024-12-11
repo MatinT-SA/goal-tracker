@@ -202,7 +202,7 @@ body {
   transition: 0.2s ease-out;
 }
 
-.goalList:hover {
+.down-layer:hover .goalList {
   transform: translate(4%, 11%);
 }
 
