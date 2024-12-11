@@ -264,7 +264,7 @@ body {
 
 .form-add-goal select {
   padding: 0.5rem 2rem;
-  grid-area: priority;
+  grid-area: priority-due;
 }
 
 .form-add-goal select:focus {
@@ -317,7 +317,7 @@ body {
 
 .form-column {
   display: flex;
-  gap: 4.5rem;
+  gap: 4.8rem;
   align-items: center;
   justify-self: flex-start;
 }
