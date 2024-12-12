@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "../UI/Button";
 import { Goal } from "./Goal";
 
-export function GoalList({ goals }) {
+export function GoalList({ goals, onCheck, goalData }) {
   const [currentPage, setCurrentPage] = useState(1);
   let goalsPerPage = 4;
 
@@ -30,8 +30,10 @@ export function GoalList({ goals }) {
     <div className="down-layer">
       <motion.ul className="goalList" key={currentPage}>
         <AnimatePresence>
-          {goals.length > 0 ? (
-            currentGoals.map((goal) => <Goal goal={goal} key={goal.id} />)
+          {goalData.length > 0 ? (
+            currentGoals.map((goal) => (
+              <Goal goal={goal} key={goal.id} onCheck={onCheck} />
+            ))
           ) : (
             <motion.p
               className="goalList__text"
@@ -47,7 +49,7 @@ export function GoalList({ goals }) {
         </AnimatePresence>
       </motion.ul>
 
-      {goals.length > goalsPerPage && (
+      {goalData.length > goalsPerPage && (
         <div className="pagination">
           {currentPage > 1 && (
             <button onClick={handlePrevPage} className="pagination-btn">

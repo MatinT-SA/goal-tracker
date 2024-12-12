@@ -35,9 +35,18 @@ export const initialGoals = [
 
 export default function App() {
   const [goals, setGoals] = useState(initialGoals);
+  const [goalData, setGoalData] = useState(goals);
 
   function handleAddGoal(goal) {
     setGoals((goals) => [...goals, goal]);
+  }
+
+  function handleCheck(id) {
+    setGoalData((prevGoals) =>
+      prevGoals.map((goal) =>
+        goal.id === id ? { ...goal, checked: !goal.checked } : goal
+      )
+    );
   }
 
   return (
@@ -45,7 +54,7 @@ export default function App() {
       <Header />
       <div className="app">
         <GoalForm onAddGoal={handleAddGoal} />
-        <GoalList goals={goals} />
+        <GoalList goals={goals} onCheck={handleCheck} goalData={goalData} />
       </div>
     </>
   );

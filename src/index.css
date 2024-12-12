@@ -418,6 +418,22 @@ body {
   border-radius: 8px;
 }
 
+.goal-container.goal-checked {
+  background-color: #e0ffe0; /* Light green background */
+  border-color: #4caf50; /* Green border */
+}
+
+.checked-icon {
+  color: #4caf50;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.goal-name.checked {
+  text-decoration: line-through;
+  color: #888;
+}
+
 .priority-ribbon {
   position: absolute;
   top: 1rem;
