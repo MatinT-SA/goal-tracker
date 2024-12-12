@@ -401,7 +401,29 @@ body {
 }
 
 .goal:hover {
-  transform: scale(1.01) translateX(1%) rotate(-0.3deg) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.goal:hover .icon-goal-rocket {
+  animation: rocketAnimation 1.5s ease-in-out infinite;
+}
+
+@keyframes rocketAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0.3rem);
+  }
+  50% {
+    transform: translateY(-0.7rem);
+  }
+  75% {
+    transform: translateY(0.3rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .goal-container {
@@ -419,8 +441,8 @@ body {
 }
 
 .goal-container.goal-checked {
-  background-color: #e0ffe0; /* Light green background */
-  border-color: #4caf50; /* Green border */
+  background-color: #e0ffe0;
+  border-color: #4caf50;
 }
 
 .checked-icon {

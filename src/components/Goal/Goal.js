@@ -35,7 +35,7 @@ export function Goal({ goal, onCheck }) {
         {checked ? (
           <IoMdCheckmarkCircle className="icon-goal checked-icon" />
         ) : (
-          <IoMdRocket className="icon-goal" />
+          <IoMdRocket className="icon-goal icon-goal-rocket" />
         )}
         <div className="priority-ribbon"></div>
         <h3 className={`goal-name ${checked ? "checked" : ""}`}>{goalName}</h3>
