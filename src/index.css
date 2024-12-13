@@ -23,6 +23,7 @@ html {
 }
 
 body {
+  position: relative;
   height: 100vh;
   color: #2b2d2e;
   display: flex;
@@ -200,6 +201,7 @@ body {
   opacity: 0.95;
   border-radius: 0.5rem 10px 5px 2.5rem;
   transition: 0.2s ease-out;
+  position: relative;
 }
 
 .goalList:hover {
@@ -402,6 +404,7 @@ body {
 
 .goal:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .goal:hover .icon-goal-rocket {
@@ -428,6 +431,7 @@ body {
 
 .goal-container {
   position: relative;
+  overflow: visible;
   display: grid;
   justify-content: space-around;
   grid-template-columns: 0.4fr 2.4fr 1fr;
@@ -438,6 +442,7 @@ body {
   gap: 0.5rem;
   padding: 0.5rem;
   border-radius: 8px;
+  z-index: 1;
 }
 
 .goal-container.goal-checked {
