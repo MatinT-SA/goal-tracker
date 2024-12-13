@@ -12,7 +12,6 @@ export function Goal({ goal, onCheck }) {
   const formattedDueDate = dueDate ? formatDate(dueDate) : "No due date";
 
   function handleGoalClick() {
-    console.log("Goal checked state inside Goal component:", goal.checked);
     if (!checked) {
       confetti({
         particleCount: 175,
@@ -20,6 +19,7 @@ export function Goal({ goal, onCheck }) {
         origin: { x: 0.68, y: 0.6 },
       });
     }
+
     onCheck(id);
   }
 
@@ -35,10 +35,11 @@ export function Goal({ goal, onCheck }) {
       <div className={`goal-container ${priorityClass}`}>
         <motion.div
           className="icon-goal"
-          key={goal.checked ? "checked" : "rocket"}
+          key={checked ? "checked" : "rocket"}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
+          exit={{ opacity: 0, scale: 0.5 }}
+          transition={{ duration: 0.4 }}
         >
           {checked ? (
             <IoMdCheckmarkCircle className="checked-icon" />

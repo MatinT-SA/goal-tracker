@@ -539,7 +539,7 @@ body {
   align-items: center;
   gap: 1rem;
   position: absolute;
-  bottom: -4px;
+  bottom: -2.7rem;
   left: 50%;
   transform: translate(-50%, -50%);
 }
