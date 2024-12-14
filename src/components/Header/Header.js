@@ -1,6 +1,18 @@
+import { useEffect, useState } from "react";
+import ProgressBar from "../UI/ProgressBar";
 import { SearchBar } from "./SearchBar";
 
-export function Header() {
+export function Header({ goals }) {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    if (Array.isArray(goals)) {
+      const checkedGoals = goals.filter((goal) => goal.checked).length;
+      const progress = (checkedGoals / goals.length) * 100;
+      setProgress(progress);
+    }
+  }, [goals]);
+
   return (
     <header className="header">
       <img src="images/logo.png" alt="Logo" />
@@ -8,6 +20,8 @@ export function Header() {
       <nav className="header-nav">
         <SearchBar />
       </nav>
+
+      <ProgressBar progress={progress} />
 
       <div className="custom-shape-divider-top-1733231526">
         <svg

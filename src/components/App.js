@@ -50,7 +50,7 @@ export default function App() {
 
   return (
     <>
-      <Header />
+      <Header goals={goals} />
       <div className="app">
         <GoalForm onAddGoal={handleAddGoal} />
         <GoalList goals={goals} onCheck={handleCheck} />
