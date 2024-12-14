@@ -9,6 +9,7 @@
   --color-complement-blue: #072237;
   --color-light-blue: #138091;
   --color-orange: #e18006;
+  --color-green: #4caf50;
 }
 
 * {
@@ -447,11 +448,11 @@ body {
 
 .goal-container.goal-checked {
   background-color: #e0ffe0;
-  border-color: #4caf50;
+  border-color: var(--color-green);
 }
 
 .checked-icon {
-  color: #4caf50;
+  color: var(--color-green);
   font-size: 3rem;
 }
 
@@ -575,7 +576,7 @@ body {
 .progress-bar {
   width: 50%;
   height: 1.6rem;
-  background: red;
+  background: linear-gradient(90deg, #e0e0e0, #f5f5f5);
   border-radius: 15px;
   top: 2rem;
   left: 50%;
@@ -585,6 +586,7 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .progress-bar > div {
