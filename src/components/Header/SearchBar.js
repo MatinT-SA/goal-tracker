@@ -1,6 +1,3 @@
-import { FaSearch } from "react-icons/fa";
-import { Button } from "../UI/Button";
-
 export function SearchBar({ onSearch, searchQuery }) {
   function handleChange(e) {
     onSearch(e.target.value);
@@ -14,9 +11,6 @@ export function SearchBar({ onSearch, searchQuery }) {
         value={searchQuery}
         onChange={handleChange}
       />
-      <Button className="button">
-        <FaSearch className="search-icon" />
-      </Button>
     </form>
   );
 }
