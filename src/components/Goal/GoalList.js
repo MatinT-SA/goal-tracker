@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Button } from "../UI/Button";
+import { MdOutlineDoNotDisturb } from "react-icons/md";
 import { Goal } from "./Goal";
 
 export function GoalList({ goals, onCheck }) {
@@ -48,8 +48,8 @@ export function GoalList({ goals, onCheck }) {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              You don't have any goals 😢{" "}
-              <Button className="add-goal">Wanna add?</Button>
+              <MdOutlineDoNotDisturb />
+              No goals found
             </motion.p>
           )}
         </AnimatePresence>

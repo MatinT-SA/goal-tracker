@@ -65,6 +65,7 @@ export default function App() {
       <div className="app">
         <GoalForm onAddGoal={handleAddGoal} />
         <GoalList
+          filteredGoals={filteredGoals}
           goals={
             filteredGoals.length > 0 || searchQuery ? filteredGoals : goals
           }
