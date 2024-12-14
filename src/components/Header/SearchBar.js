@@ -1,24 +1,18 @@
 import { FaSearch } from "react-icons/fa";
 import { Button } from "../UI/Button";
-import { useState } from "react";
 
-export function SearchBar({ onSearch }) {
-  const [query, setQuery] = useState("");
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (query.trim() !== "") {
-      onSearch(query);
-    }
+export function SearchBar({ onSearch, searchQuery }) {
+  function handleChange(e) {
+    onSearch(e.target.value);
   }
 
   return (
-    <form className="search-box" onSubmit={handleSubmit}>
+    <form className="search-box" onSubmit={(e) => e.preventDefault()}>
       <input
         type="text"
         placeholder="Search..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        value={searchQuery}
+        onChange={handleChange}
       />
       <Button className="button">
         <FaSearch className="search-icon" />

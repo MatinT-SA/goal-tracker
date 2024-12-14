@@ -127,7 +127,9 @@ export function GoalForm({ onAddGoal }) {
       />
 
       {/* Submit Button */}
-      <Button className="form-add-goal__btn">Submit</Button>
+      <Button className="form-add-goal__btn" type="submit">
+        Submit
+      </Button>
     </form>
   );
 }
