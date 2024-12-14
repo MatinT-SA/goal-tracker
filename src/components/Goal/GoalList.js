@@ -19,12 +19,6 @@ export function GoalList({ goals, onCheck }) {
     }
   }, [goals, currentPage, currentGoals]);
 
-  useEffect(() => {
-    if (currentGoals.length === 0 && currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    }
-  }, [goals, currentPage, currentGoals]);
-
   function handlePrevPage() {
     setCurrentPage((prevPage) => prevPage - 1);
   }
