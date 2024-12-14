@@ -460,9 +460,20 @@ body {
   font-size: 3rem;
 }
 
-.goal-name.checked {
-  text-decoration: line-through;
+.goal-checked {
   color: #888;
+  text-decoration: line-through;
+}
+
+.goal-checked .goal-name,
+.goal-checked .notes,
+.goal-checked .added-date,
+.goal-checked .due-date {
+  color: #888;
+}
+
+.goal-checked .priority-ribbon {
+  opacity: 0.5;
 }
 
 .priority-ribbon {

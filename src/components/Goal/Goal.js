@@ -49,7 +49,7 @@ export function Goal({ goal, onCheck }) {
         </motion.div>
 
         <div className="priority-ribbon"></div>
-        <h3 className={`goal-name ${checked ? "checked" : ""}`}>{goalName}</h3>
+        <h3 className="goal-name">{goalName}</h3>
         <span className="added-date">
           <b>Added:</b> {formattedAddedDate}
         </span>
