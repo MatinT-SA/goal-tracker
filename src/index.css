@@ -584,4 +584,11 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
+}
+
+.progress-bar > div {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
