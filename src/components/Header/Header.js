@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProgressBar from "../UI/ProgressBar";
 import { SearchBar } from "./SearchBar";
 
-export function Header({ goals }) {
+export function Header({ goals, onSearch }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export function Header({ goals }) {
       <img src="images/logo.png" alt="Logo" />
 
       <nav className="header-nav">
-        <SearchBar />
+        <SearchBar onSearch={onSearch} />
       </nav>
 
       <ProgressBar progress={progress} />

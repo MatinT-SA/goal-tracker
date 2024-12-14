@@ -35,6 +35,7 @@ export const initialGoals = [
 
 export default function App() {
   const [goals, setGoals] = useState(initialGoals);
+  const [filteredGoals, setFilteredGoals] = useState([]);
 
   function handleAddGoal(goal) {
     setGoals((goals) => [...goals, goal]);
@@ -48,12 +49,22 @@ export default function App() {
     );
   }
 
+  function handleSearch(query) {
+    const filtered = goals.filter((goal) =>
+      goal.goalName.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredGoals(filtered);
+  }
+
   return (
     <>
-      <Header goals={goals} />
+      <Header goals={goals} onSearch={handleSearch} />
       <div className="app">
         <GoalForm onAddGoal={handleAddGoal} />
-        <GoalList goals={goals} onCheck={handleCheck} />
+        <GoalList
+          goals={filteredGoals.length > 0 ? filteredGoals : goals}
+          onCheck={handleCheck}
+        />
       </div>
     </>
   );
