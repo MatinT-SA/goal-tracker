@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MdOutlineDoNotDisturb } from "react-icons/md";
 import { Goal } from "./Goal";
+import { Button } from "../UI/Button";
 
 export function GoalList({ goals, onCheck }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -58,17 +59,17 @@ export function GoalList({ goals, onCheck }) {
       {goals.length > goalsPerPage && (
         <div className="pagination">
           {currentPage > 1 && (
-            <button onClick={handlePrevPage} className="pagination-btn">
+            <Button onClick={handlePrevPage} className="pagination-btn">
               ←
-            </button>
+            </Button>
           )}
           <span>
             {currentPage} / {totalPages}
           </span>
           {currentPage < totalPages && (
-            <button onClick={handleNextPage} className="pagination-btn">
+            <Button onClick={handleNextPage} className="pagination-btn">
               →
-            </button>
+            </Button>
           )}
         </div>
       )}
