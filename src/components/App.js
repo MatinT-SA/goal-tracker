@@ -99,6 +99,11 @@ export default function App() {
     updatedThemeForElement(".form-add-goal", newTheme);
     updatedThemeForElement(".calendar-icon", newTheme);
     updatedThemeForElement(".custom-date-picker-button", newTheme);
+    updatedThemeForElement(".goal", newTheme);
+    updatedThemeForElement(".goal p", newTheme);
+    updatedThemeForElement(".goal span", newTheme);
+    updatedThemeForElement(".down-layer", newTheme);
+    updatedThemeForElement(".goalList", newTheme);
   }
 
   return (

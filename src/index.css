@@ -433,7 +433,7 @@ body[data-theme="dark"] {
 }
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
-/* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ Goal ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
+/* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ Goal Item ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 
 .goal {
@@ -448,6 +448,13 @@ body[data-theme="dark"] {
   background-color: #fff;
   position: relative;
   transition: 0.3s ease;
+}
+
+.goal[data-theme="dark"],
+.goal p[data-theme="dark"],
+.goal span[data-theme="dark"] {
+  background-color: var(--color-dark-blue);
+  color: white;
 }
 
 .goal:hover {
@@ -512,6 +519,13 @@ body[data-theme="dark"] {
 .goal-checked .notes,
 .goal-checked .added-date,
 .goal-checked .due-date {
+  color: var(--color-gray);
+}
+
+.goal-checked .goal-name[data-theme="dark"],
+.goal-checked .notes[data-theme="dark"],
+.goal-checked .added-date[data-theme="dark"],
+.goal-checked .due-date[data-theme="dark"] {
   color: var(--color-gray);
 }
 
