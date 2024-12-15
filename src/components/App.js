@@ -103,7 +103,9 @@ export default function App() {
     updatedThemeForElement(".goal p", newTheme);
     updatedThemeForElement(".goal span", newTheme);
     updatedThemeForElement(".down-layer", newTheme);
-    updatedThemeForElement(".goalList", newTheme);
+    updatedThemeForElement(".header img", newTheme);
+    updatedThemeForElement(".header-nav", newTheme);
+    updatedThemeForElement(".footer", newTheme);
   }
 
   return (
