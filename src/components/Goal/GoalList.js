@@ -4,7 +4,12 @@ import { MdOutlineDoNotDisturb } from "react-icons/md";
 import { Goal } from "./Goal";
 import { Button } from "../UI/Button";
 
-export function GoalList({ goals, onCheck }) {
+export function GoalList({
+  goals,
+  onCheck,
+  isDarkMode,
+  updatedThemeForElement,
+}) {
   const [currentPage, setCurrentPage] = useState(1);
   let goalsPerPage = 4;
 
@@ -18,6 +23,10 @@ export function GoalList({ goals, onCheck }) {
       setCurrentPage((prevPage) => prevPage - 1);
     }
   }, [goals, currentPage, currentGoals]);
+
+  useEffect(() => {
+    updatedThemeForElement(".goal", isDarkMode ? "dark" : "light");
+  }, [currentPage, goals, isDarkMode]);
 
   function handlePrevPage() {
     setCurrentPage((prevPage) => prevPage - 1);

@@ -119,6 +119,8 @@ export default function App() {
             filteredGoals.length > 0 || searchQuery ? filteredGoals : goals
           }
           onCheck={handleCheck}
+          isDarkMode={isDarkMode}
+          updatedThemeForElement={updatedThemeForElement}
         />
       </div>
       <Footer isDarkMode={isDarkMode} onToggle={handleDarkModeToggle} />
