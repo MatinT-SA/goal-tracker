@@ -29,7 +29,7 @@ export const initialGoals = [
     checked: false,
     priority: "low",
     dueDate: null,
-    notes: "Listening to Eminem",
+    notes: "Listening to Kelly Clarkson",
     addedDate: "2024-12-06T10:00",
   },
 ];
@@ -79,9 +79,11 @@ export default function App() {
   }
 
   function updatedThemeForElement(selector, theme) {
-    const element = document.querySelector(selector);
-    if (element) {
-      element.setAttribute("data-theme", theme);
+    const elements = document.querySelectorAll(selector);
+    if (elements.length > 0) {
+      elements.forEach((element) => {
+        element.setAttribute("data-theme", theme);
+      });
     }
   }
 
@@ -91,6 +93,12 @@ export default function App() {
 
     document.body.setAttribute("data-theme", newTheme);
     updatedThemeForElement(".custom-shape-divider-top-1733231526", newTheme);
+    updatedThemeForElement(".progress-bar", newTheme);
+    updatedThemeForElement(".form-add-goal input", newTheme);
+    updatedThemeForElement(".form-add-goal select", newTheme);
+    updatedThemeForElement(".form-add-goal", newTheme);
+    updatedThemeForElement(".calendar-icon", newTheme);
+    updatedThemeForElement(".custom-date-picker-button", newTheme);
   }
 
   return (
