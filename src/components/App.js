@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header } from "../components/Header/Header";
 import { GoalList } from "./Goal/GoalList";
 import { GoalForm } from "./Goal/GoalForm";
+import { Footer } from "./Footer/Footer";
 
 export const initialGoals = [
   {
@@ -72,6 +73,7 @@ export default function App() {
           onCheck={handleCheck}
         />
       </div>
+      <Footer />
     </>
   );
 }
