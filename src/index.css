@@ -10,6 +10,7 @@
   --color-light-blue: #138091;
   --color-orange: #e18006;
   --color-green: #4caf50;
+  --color-gray: #888;
 }
 
 :root[data-theme="light"] {
@@ -130,6 +131,8 @@ body {
 }
 
 .header-nav input {
+  background: var(--color-dark-blue);
+  color: white;
   font-family: inherit;
   padding: 1rem 1.5rem;
   font-size: 1.5rem;
@@ -140,6 +143,10 @@ body {
   padding-right: 50px;
   box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.1);
   transition: 0.2s box-shadow ease;
+}
+
+.header-nav input::placeholder {
+  color: rgb(211, 211, 211);
 }
 
 .button {
@@ -157,7 +164,7 @@ body {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   padding: 0;
-  color: #888;
+  color: var(--color-gray);
   transition: 0.2s ease-out;
 }
 
@@ -483,7 +490,7 @@ body {
 }
 
 .goal-checked {
-  color: #888;
+  color: var(--color-gray);
   text-decoration: line-through;
 }
 
@@ -491,7 +498,7 @@ body {
 .goal-checked .notes,
 .goal-checked .added-date,
 .goal-checked .due-date {
-  color: #888;
+  color: var(--color-gray);
 }
 
 .goal-checked .priority-ribbon {
@@ -533,7 +540,7 @@ body {
 
 .goal-name.checked {
   text-decoration: line-through;
-  color: #888;
+  color: var(--color-gray);
 }
 
 .added-date {
