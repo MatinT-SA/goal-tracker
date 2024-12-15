@@ -10,7 +10,7 @@ function ProgressBar({ progress }) {
           height: "100%",
           display: "flex",
           justifyContent: "flex-start",
-          backgroundColor: "#4caf50",
+          backgroundColor: "#03424c",
           borderRadius: "15px 0 0 15px",
           ...props,
         }}
