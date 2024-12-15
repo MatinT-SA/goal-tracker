@@ -78,10 +78,19 @@ export default function App() {
     setFilteredGoals(filtered);
   }
 
+  function updatedThemeForElement(selector, theme) {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.setAttribute("data-theme", theme);
+    }
+  }
+
   function handleDarkModeToggle() {
+    const newTheme = !isDarkMode ? "dark" : "light";
     setIsDarkMode((prevMode) => !prevMode);
 
-    document.body.setAttribute("data-theme", !isDarkMode ? "dark" : "light");
+    document.body.setAttribute("data-theme", newTheme);
+    updatedThemeForElement(".custom-shape-divider-top-1733231526", newTheme);
   }
 
   return (
