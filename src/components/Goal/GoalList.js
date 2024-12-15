@@ -22,11 +22,11 @@ export function GoalList({
     if (currentGoals.length === 0 && currentPage > 1) {
       setCurrentPage((prevPage) => prevPage - 1);
     }
-  }, [goals, currentPage, currentGoals]);
 
-  useEffect(() => {
     updatedThemeForElement(".goal", isDarkMode ? "dark" : "light");
-  }, [currentPage, goals, isDarkMode]);
+    updatedThemeForElement(".goal p", isDarkMode ? "dark" : "light");
+    updatedThemeForElement(".goal span", isDarkMode ? "dark" : "light");
+  }, [goals, currentPage, currentGoals, isDarkMode, updatedThemeForElement]);
 
   function handlePrevPage() {
     setCurrentPage((prevPage) => prevPage - 1);
