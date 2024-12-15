@@ -1,17 +1,7 @@
-import { useState } from "react";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import Switch from "react-switch";
 
-export function Footer() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  function toggleTheme() {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      document.body.setAttribute("data-theme", newMode ? "dark" : "light");
-      return newMode;
-    });
-  }
-
+export function Footer({ isDarkMode, onToggle }) {
   return (
     <div className="footer">
       <div className="footer-links">
@@ -46,9 +36,12 @@ export function Footer() {
         </p>
       </div>
       <div className="footer-theme-toggle">
-        <button onClick={toggleTheme} className="theme-toggle-btn">
-          {isDarkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-        </button>
+        <Switch
+          onChange={onToggle}
+          checked={isDarkMode}
+          uncheckedIcon={<div style={{ padding: "2px" }}>🌞</div>}
+          checkedIcon={<div style={{ padding: "2px" }}>🌙</div>}
+        />
       </div>
     </div>
   );

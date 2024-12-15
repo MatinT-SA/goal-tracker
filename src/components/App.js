@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "../components/Header/Header";
 import { GoalList } from "./Goal/GoalList";
 import { GoalForm } from "./Goal/GoalForm";
@@ -38,6 +38,24 @@ export default function App() {
   const [goals, setGoals] = useState(initialGoals);
   const [filteredGoals, setFilteredGoals] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check for saved theme in localStorage
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode) {
+      setIsDarkMode(savedMode === "true");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+    localStorage.setItem("darkMode", isDarkMode);
+  }, [isDarkMode]);
 
   function handleAddGoal(goal) {
     setGoals((prevGoals) => [...prevGoals, goal]);
@@ -60,6 +78,12 @@ export default function App() {
     setFilteredGoals(filtered);
   }
 
+  function handleDarkModeToggle() {
+    setIsDarkMode((prevMode) => !prevMode);
+
+    document.body.setAttribute("data-theme", !isDarkMode ? "dark" : "light");
+  }
+
   return (
     <>
       <Header goals={goals} onSearch={handleSearch} searchQuery={searchQuery} />
@@ -73,7 +97,7 @@ export default function App() {
           onCheck={handleCheck}
         />
       </div>
-      <Footer />
+      <Footer isDarkMode={isDarkMode} onToggle={handleDarkModeToggle} />
     </>
   );
 }
