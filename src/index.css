@@ -645,13 +645,13 @@ body {
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
 
 .footer {
-  background-color: #333;
+  background: var(--color-dark-blue);
   color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  padding: 2rem 7rem;
+  padding: 2rem;
   position: relative;
   border-radius: 1rem;
   text-align: center;
