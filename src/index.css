@@ -94,7 +94,7 @@ body[data-theme="dark"] {
 .header img {
   max-width: 100%;
   height: auto;
-  position: fixed;
+  position: absolute;
   z-index: 1000;
   width: 150px;
   top: 2rem;
@@ -116,7 +116,7 @@ body[data-theme="dark"] {
 .header-nav {
   right: 4rem;
   top: 3.5rem;
-  position: fixed;
+  position: absolute;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -954,9 +954,22 @@ body[data-theme="dark"] {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    min-height: 110vh;
   }
 
   .form-add-goal {
     margin-top: 5rem;
+  }
+
+  .form-column {
+    gap: 3.8rem;
+  }
+
+  .form-add-goal select {
+    padding: 0.5rem 1rem;
+  }
+
+  .footer {
+    margin: 1rem;
   }
 }
