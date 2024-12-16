@@ -988,6 +988,20 @@ body[data-theme="dark"] {
     border-radius: 50%;
   }
 
+  .form-add-goal {
+    margin-top: 7rem;
+  }
+
   .progress-bar {
+    margin: 0rem auto 3rem;
+    max-width: 40%;
+    min-width: 70%;
+    top: 4rem;
+    transform: none;
+    left: 0;
+  }
+
+  .footer-outer {
+    margin-top: 3rem;
   }
 }
