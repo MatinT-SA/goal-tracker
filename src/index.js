@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Toaster position="bottom-left" richColors />
+    <Toaster position="top-center" richColors />
     <App />
   </React.StrictMode>
 );

@@ -10,14 +10,13 @@ export function GoalForm({ onAddGoal }) {
   const [priority, setPriority] = useState("medium");
   const [dueDate, setDueDate] = useState(null);
   const [notes, setNotes] = useState("");
-  // const [notesError, setNotesError] = useState("");
 
   const NOTES_CHAR_LIMIT = 80;
 
   function handleNotesChange(e) {
-    const input = e.target.value;
-    if (input.length <= NOTES_CHAR_LIMIT) {
-      setNotes(input);
+    const noteInput = e.target.value;
+    if (noteInput.length <= NOTES_CHAR_LIMIT) {
+      setNotes(noteInput);
     } else {
       toast.error(`Notes must be ${NOTES_CHAR_LIMIT} characters or fewer.`);
     }
@@ -32,7 +31,7 @@ export function GoalForm({ onAddGoal }) {
     }
 
     if (!goalName.trim()) {
-      toast.error("Goal name cannot be empty!");
+      toast.error("Goal name is required");
       return;
     }
 
@@ -98,7 +97,6 @@ export function GoalForm({ onAddGoal }) {
         value={goalName}
         onChange={(e) => setGoalName(e.target.value)}
         id="goal-name"
-        required
         className="goal-name-input"
         placeholder="E.g: Reading Book"
       />
