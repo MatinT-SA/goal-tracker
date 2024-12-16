@@ -1,7 +1,7 @@
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Switch from "react-switch";
 
-export function Footer({ isDarkMode, onToggle }) {
+export function Footer({ isDarkMode, onToggle, onReset }) {
   return (
     <div className="footer-outer">
       <div className="footer">
@@ -36,7 +36,10 @@ export function Footer({ isDarkMode, onToggle }) {
             . All Rights Reserved.
           </p>
         </div>
-        <div className="footer-theme-toggle">
+        <div className="footer-actions">
+          <button className="reset-button" onClick={onReset}>
+            Reset Goals
+          </button>
           <Switch
             onChange={onToggle}
             checked={isDarkMode}

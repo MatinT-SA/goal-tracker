@@ -379,7 +379,7 @@ body[data-theme="dark"] {
 
 .form-column {
   display: flex;
-  gap: 5rem;
+  gap: 4.8rem;
   align-items: center;
   justify-self: flex-start;
 }
@@ -826,6 +826,38 @@ body[data-theme="dark"] {
 .theme-toggle-btn:hover {
   background-color: var(--btn-hover-bg);
   color: var(--btn-hover-text);
+}
+
+/* Add this to the existing .footer-actions or a new section */
+.footer-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Space between switch and button */
+}
+
+/* Styling for the Reset Goals button */
+.reset-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: var(--color-orange);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.reset-button:hover {
+  background-color: #e65c00;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(230, 92, 0, 0.4);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 /* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */

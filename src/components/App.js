@@ -35,7 +35,11 @@ export const initialGoals = [
 ];
 
 export default function App() {
-  const [goals, setGoals] = useState(initialGoals);
+  // LocalStorage
+  const [goals, setGoals] = useState(() => {
+    const savedGoals = localStorage.getItem("goals");
+    return savedGoals ? JSON.parse(savedGoals) : initialGoals;
+  });
   const [filteredGoals, setFilteredGoals] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -57,6 +61,10 @@ export default function App() {
     }
     localStorage.setItem("darkMode", isDarkMode);
   }, [isDarkMode]);
+
+  useEffect(() => {
+    localStorage.setItem("goals", JSON.stringify(goals));
+  }, [goals]);
 
   function handleAddGoal(goal) {
     setGoals((prevGoals) => [...prevGoals, goal]);
@@ -109,6 +117,13 @@ export default function App() {
     updatedThemeForElement(".footer", newTheme);
   }
 
+  function handleResetGoals() {
+    setGoals([]);
+    localStorage.removeItem("goals");
+    setFilteredGoals([]);
+    setSearchQuery("");
+  }
+
   return (
     <>
       <Header
@@ -132,7 +147,11 @@ export default function App() {
           setProgress={setProgress}
         />
       </div>
-      <Footer isDarkMode={isDarkMode} onToggle={handleDarkModeToggle} />
+      <Footer
+        isDarkMode={isDarkMode}
+        onToggle={handleDarkModeToggle}
+        onReset={handleResetGoals}
+      />
     </>
   );
 }
