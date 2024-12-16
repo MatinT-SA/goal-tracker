@@ -848,6 +848,14 @@ body[data-theme="dark"] {
     transform: translate(3%, 5%);
   }
 
+  .down-layer:hover {
+    transform: none;
+  }
+
+  .down-layer:hover .goalList {
+    transform: translate(3%, 5%);
+  }
+
   .goal-container {
     grid-template-columns: 0.1fr 2.3fr 1.4fr;
     padding: 0.3rem;
@@ -971,5 +979,15 @@ body[data-theme="dark"] {
 
   .footer {
     margin: 1rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .header img {
+    width: 90px;
+    border-radius: 50%;
+  }
+
+  .progress-bar {
   }
 }

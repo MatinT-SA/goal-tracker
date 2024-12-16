@@ -39,6 +39,7 @@ export default function App() {
   const [filteredGoals, setFilteredGoals] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     // Check for saved theme in localStorage
@@ -110,7 +111,13 @@ export default function App() {
 
   return (
     <>
-      <Header goals={goals} onSearch={handleSearch} searchQuery={searchQuery} />
+      <Header
+        goals={goals}
+        onSearch={handleSearch}
+        searchQuery={searchQuery}
+        progress={progress}
+        setProgress={setProgress}
+      />
       <div className="app">
         <GoalForm onAddGoal={handleAddGoal} />
         <GoalList
@@ -121,6 +128,8 @@ export default function App() {
           onCheck={handleCheck}
           isDarkMode={isDarkMode}
           updatedThemeForElement={updatedThemeForElement}
+          progress={progress}
+          setProgress={setProgress}
         />
       </div>
       <Footer isDarkMode={isDarkMode} onToggle={handleDarkModeToggle} />

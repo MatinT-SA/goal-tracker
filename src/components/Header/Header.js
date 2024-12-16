@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
 import ProgressBar from "../UI/ProgressBar";
 import { SearchBar } from "./SearchBar";
+import { useGoalProgress } from "../../hooks/useGoalProgress";
+import { useScreenWidth } from "../../hooks/useScreenWidth";
 
-export function Header({ goals, onSearch, searchQuery }) {
-  const [progress, setProgress] = useState(0);
+export function Header({
+  goals,
+  onSearch,
+  searchQuery,
+  progress,
+  setProgress,
+}) {
+  const screenWidth = useScreenWidth();
 
-  useEffect(() => {
-    if (Array.isArray(goals)) {
-      const checkedGoals = goals.filter((goal) => goal.checked).length;
-      const progress = (checkedGoals / goals.length) * 100;
-      setProgress(progress);
-    }
-  }, [goals]);
+  useGoalProgress(goals, setProgress);
 
   return (
     <header className="header">
@@ -21,7 +22,7 @@ export function Header({ goals, onSearch, searchQuery }) {
         <SearchBar onSearch={onSearch} searchQuery={searchQuery} />
       </nav>
 
-      <ProgressBar progress={progress} />
+      {screenWidth > 550 && <ProgressBar progress={progress} />}
 
       <div className="custom-shape-divider-top-1733231526">
         <svg
