@@ -882,6 +882,7 @@ body[data-theme="dark"] {
   .footer {
     animation: none;
     bottom: 0;
+    grid-template-columns: 2fr 4fr 1fr;
   }
 }
 
@@ -967,6 +968,7 @@ body[data-theme="dark"] {
 
   .form-add-goal {
     margin-top: 5rem;
+    margin-left: 0;
   }
 
   .form-column {
@@ -977,8 +979,20 @@ body[data-theme="dark"] {
     padding: 0.5rem 1rem;
   }
 
+  .down-layer {
+    margin: auto 1.25rem 4rem 0.5rem;
+  }
+
   .footer {
     margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+    padding: 2rem 1rem;
+  }
+
+  .footer-copyright {
+    border: none;
   }
 }
 
@@ -986,6 +1000,10 @@ body[data-theme="dark"] {
   .header img {
     width: 90px;
     border-radius: 50%;
+  }
+
+  .down-layer {
+    margin: auto 1.25rem 2rem 0.5rem;
   }
 
   .form-add-goal {
@@ -996,12 +1014,49 @@ body[data-theme="dark"] {
     margin: 0rem auto 3rem;
     max-width: 40%;
     min-width: 70%;
-    top: 4rem;
+    top: 3rem;
     transform: none;
     left: 0;
   }
 
   .footer-outer {
     margin-top: 3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .form-add-goal {
+    margin-top: 10rem;
+  }
+
+  .down-layer {
+    padding: 0;
+  }
+
+  .goalList {
+    margin-right: 0;
+    transform: none;
+    opacity: 1;
+  }
+
+  .down-layer:hover .goalList {
+    transform: none;
+  }
+
+  .goal {
+    padding: 0.5rem 0.1rem;
+  }
+
+  .goal-container {
+    gap: 1rem 0.1rem;
+    padding: 0.3rem 0.1rem 0.3rem 0.5rem;
+  }
+
+  .goal-name {
+    font-size: 1.2rem;
+  }
+
+  .pagination {
+    bottom: -0.5rem;
   }
 }
