@@ -3,15 +3,38 @@ import { Button } from "../UI/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { roundToNearest5Minutes, getMaxTime } from "../../utils/timeUtils";
+import { toast } from "sonner";
 
 export function GoalForm({ onAddGoal }) {
   const [goalName, setGoalName] = useState("");
   const [priority, setPriority] = useState("medium");
   const [dueDate, setDueDate] = useState(null);
   const [notes, setNotes] = useState("");
+  // const [notesError, setNotesError] = useState("");
+
+  const NOTES_CHAR_LIMIT = 80;
+
+  function handleNotesChange(e) {
+    const input = e.target.value;
+    if (input.length <= NOTES_CHAR_LIMIT) {
+      setNotes(input);
+    } else {
+      toast.error(`Notes must be ${NOTES_CHAR_LIMIT} characters or fewer.`);
+    }
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (notes.length > NOTES_CHAR_LIMIT) {
+      toast.error(`Notes must be ${NOTES_CHAR_LIMIT} characters or fewer.`);
+      return;
+    }
+
+    if (!goalName.trim()) {
+      toast.error("Goal name cannot be empty!");
+      return;
+    }
 
     const id = crypto.randomUUID();
 
@@ -26,6 +49,8 @@ export function GoalForm({ onAddGoal }) {
     };
 
     onAddGoal(newGoal);
+
+    toast.success("Goal added successfully!");
 
     setGoalName("");
     setPriority("medium");
@@ -115,12 +140,15 @@ export function GoalForm({ onAddGoal }) {
 
       {/* Notes */}
       <label htmlFor="notes" className="notes-label">
-        Notes:
+        Notes:{" "}
+        <small>
+          ({notes.length}/{NOTES_CHAR_LIMIT})
+        </small>
       </label>
       <input
         type="text"
         value={notes}
-        onChange={(e) => setNotes(e.target.value)}
+        onChange={handleNotesChange}
         id="notes"
         className="notes-input"
         placeholder="The Selfish Gene"
