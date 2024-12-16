@@ -215,6 +215,7 @@ body[data-theme="dark"] {
 .down-layer {
   background: var(--color-dark-blue);
   padding: 0 0 1rem 0;
+  margin-right: 3rem;
   border-radius: 1rem 20px 10px 5rem;
   z-index: 100;
   position: relative;
@@ -235,6 +236,7 @@ body[data-theme="dark"] {
   max-height: 65vh;
   background: var(--color-light-blue);
   padding: 1rem 6rem 1rem 5rem;
+  margin-right: 0.5rem;
   transform: translate(4%, 10%);
   opacity: 0.95;
   border-radius: 0.5rem 10px 5px 2.5rem;
@@ -275,6 +277,7 @@ body[data-theme="dark"] {
   background: var(--color-light-blue);
   color: white;
   padding: 3rem 6rem 3rem 3rem;
+  margin-left: 1rem;
   border-radius: 1rem;
   position: relative;
   top: 2.5rem;
@@ -324,7 +327,6 @@ body[data-theme="dark"] {
 
 .form-add-goal select {
   padding: 0.5rem 2rem;
-  grid-area: priority-due;
 }
 
 .form-add-goal select:focus {
@@ -708,6 +710,7 @@ body[data-theme="dark"] {
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
+  margin: auto 1rem;
   left: 0;
   right: 0;
   bottom: -5rem;
@@ -823,4 +826,62 @@ body[data-theme="dark"] {
 .theme-toggle-btn:hover {
   background-color: var(--btn-hover-bg);
   color: var(--btn-hover-text);
+}
+
+/* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
+/* ⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⫸ Responsiveness ⫷⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢⬢ */
+/* ▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜▛▀▜ */
+
+@media (min-width: 1800px) {
+  html {
+    font-size: 100%;
+  }
+
+  .form-column {
+    gap: 6.1rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .goalList {
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    transform: translate(3%, 5%);
+  }
+
+  .goal-container {
+    grid-template-columns: 0.1fr 2.3fr 1.4fr;
+    padding: 0.3rem;
+  }
+
+  .icon-goal {
+    margin: 0.3rem 0 0 0;
+  }
+
+  .form-column {
+    gap: 3.6rem;
+  }
+
+  .pagination {
+    bottom: -1.5rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .header-nav input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .form-column:nth-child(2) {
+    gap: 1rem;
+  }
+
+  .form-column {
+    gap: 2.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1.6fr 1fr;
+  }
 }
