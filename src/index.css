@@ -870,6 +870,11 @@ body[data-theme="dark"] {
   .header-nav input {
     width: 200px;
   }
+
+  .footer {
+    animation: none;
+    bottom: 0;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -891,6 +896,10 @@ body[data-theme="dark"] {
 }
 
 @media (max-width: 1000px) {
+  html {
+    font-size: 60%;
+  }
+
   .app {
     column-gap: 1rem;
   }
@@ -902,7 +911,7 @@ body[data-theme="dark"] {
   }
 
   .form-column {
-    gap: 4.8rem;
+    gap: 6.8rem;
   }
 
   .form-row {
@@ -911,5 +920,43 @@ body[data-theme="dark"] {
 
   .form-column:nth-child(2) {
     gap: 0.1rem;
+  }
+
+  .progress-bar {
+    width: 30%;
+  }
+
+  .react-datepicker-popper {
+    z-index: 1000 !important;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    overflow: auto;
+    height: auto;
+  }
+
+  .header-nav {
+    right: 2rem;
+  }
+
+  .header-nav input {
+    width: 150px;
+  }
+
+  .header img {
+    width: 120px;
+    left: 2rem;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-add-goal {
+    margin-top: 5rem;
   }
 }
