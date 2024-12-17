@@ -805,7 +805,7 @@ body[data-theme="dark"] {
   border-bottom: 1px solid var(--color-orange);
 }
 
-/* footer dark mode */
+/* footer actions */
 
 .footer-theme-toggle {
   display: flex;
@@ -828,15 +828,13 @@ body[data-theme="dark"] {
   color: var(--btn-hover-text);
 }
 
-/* Add this to the existing .footer-actions or a new section */
 .footer-actions {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem; /* Space between switch and button */
+  gap: 1rem;
 }
 
-/* Styling for the Reset Goals button */
 .reset-button {
   padding: 0.8rem 1.5rem;
   font-size: 1.2rem;
