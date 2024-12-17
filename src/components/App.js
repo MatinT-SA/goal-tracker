@@ -121,6 +121,7 @@ export default function App() {
   function handleResetGoals() {
     if (goals.length > 0) {
       setGoals([]);
+      setProgress(0);
       localStorage.removeItem("goals");
       setFilteredGoals([]);
       setSearchQuery("");

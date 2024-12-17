@@ -1,7 +1,12 @@
 import { useSpring, animated } from "@react-spring/web";
 
 function ProgressBar({ progress }) {
-  const props = useSpring({ width: `${progress}%` });
+  const safeProgress = Number(progress);
+  const props = useSpring({
+    from: { width: "0%" },
+    to: { width: safeProgress > 0 ? `${safeProgress}%` : "0%" },
+    immediate: safeProgress === 0,
+  });
 
   const customBackgroundColor = progress === 100 ? "#4caf50" : "#03424c";
 
@@ -17,7 +22,7 @@ function ProgressBar({ progress }) {
           justifyContent: "flex-start",
           backgroundColor: customBackgroundColor,
           borderRadius: "15px 0 0 15px",
-          ...props,
+          width: props.width,
         }}
       />
     </div>
