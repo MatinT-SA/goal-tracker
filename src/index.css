@@ -921,7 +921,7 @@ body[data-theme="dark"] {
   .footer {
     animation: none;
     bottom: 0;
-    grid-template-columns: 2fr 4fr 1fr;
+    grid-template-columns: 2fr 4fr 1.5fr;
   }
 }
 
@@ -977,6 +977,10 @@ body[data-theme="dark"] {
   .react-datepicker-popper {
     z-index: 1000 !important;
   }
+
+  .reset-button {
+    padding: 0.8rem;
+  }
 }
 
 @media (max-width: 800px) {
@@ -1020,6 +1024,7 @@ body[data-theme="dark"] {
 
   .down-layer {
     margin: auto 1.25rem 4rem 0.5rem;
+    min-width: 60vw;
   }
 
   .footer {
