@@ -116,6 +116,7 @@ export default function App() {
     updatedThemeForElement(".header img", newTheme);
     updatedThemeForElement(".header-nav", newTheme);
     updatedThemeForElement(".footer", newTheme);
+    updatedThemeForElement(".reset-button", newTheme);
   }
 
   function handleResetGoals() {

@@ -847,10 +847,19 @@ body[data-theme="dark"] {
   font-weight: bold;
 }
 
+.reset-button[data-theme="dark"] {
+  background-color: var(--color-light-blue);
+}
+
 .reset-button:hover {
   background-color: #e65c00;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(230, 92, 0, 0.4);
+}
+
+.reset-button:hover[data-theme="dark"] {
+  background-color: var(--color-complement-blue);
+  box-shadow: 0 2px 10px 5px rgba(19, 128, 145, 0.5);
 }
 
 .reset-button:active {
