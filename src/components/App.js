@@ -47,23 +47,6 @@ export default function App() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Check for saved theme in localStorage
-    const savedMode = localStorage.getItem("darkMode");
-    if (savedMode) {
-      setIsDarkMode(savedMode === "true");
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
-    localStorage.setItem("darkMode", isDarkMode);
-  }, [isDarkMode]);
-
-  useEffect(() => {
     localStorage.setItem("goals", JSON.stringify(goals));
   }, [goals]);
 
