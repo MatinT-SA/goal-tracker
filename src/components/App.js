@@ -3,6 +3,7 @@ import { Header } from "../components/Header/Header";
 import { GoalList } from "./Goal/GoalList";
 import { GoalForm } from "./Goal/GoalForm";
 import { Footer } from "./Footer/Footer";
+import { toast } from "sonner";
 
 export const initialGoals = [
   {
@@ -118,10 +119,13 @@ export default function App() {
   }
 
   function handleResetGoals() {
-    setGoals([]);
-    localStorage.removeItem("goals");
-    setFilteredGoals([]);
-    setSearchQuery("");
+    if (goals.length > 0) {
+      setGoals([]);
+      localStorage.removeItem("goals");
+      setFilteredGoals([]);
+      setSearchQuery("");
+      toast.success("Goals list cleared successfully");
+    }
   }
 
   return (
