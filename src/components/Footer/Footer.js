@@ -43,6 +43,8 @@ export function Footer({ isDarkMode, onToggle, onReset }) {
           <Switch
             onChange={onToggle}
             checked={isDarkMode}
+            onColor={isDarkMode && "#e18006"}
+            offColor={!isDarkMode && "#138091"}
             uncheckedIcon={<div style={{ padding: "2px" }}>🌞</div>}
             checkedIcon={<div style={{ padding: "2px" }}>🌙</div>}
           />
