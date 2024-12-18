@@ -1,7 +1,7 @@
 # goal-tracker
 
 This is a fully responsive React app for tracking your goals based on their priorities. There's a Progress Bar for displaying each of the goals checked and done.
-I've utilized various React Hooks and concepts, such as useState, useEffect, and forwardRef, along with the react-icons library to make it a robust and modern app. (Under development)
+I've utilized various React Hooks and concepts, such as useState, useEffect, and forwardRef, along with the react-icons library to make it a robust and modern app.
 
 # Features
 
