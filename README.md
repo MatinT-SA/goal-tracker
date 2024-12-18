@@ -19,4 +19,14 @@ I've utilized various React Hooks and concepts, such as useState, useEffect, and
 
 - Spring Animations: Used React Spring to add smooth, interactive animations.
 
+# Tech Stack
+
+- React: For building the user interface.
+- Framer Motion: For animations and transitions.
+- React Spring: For interactive and smooth animations.
+- React Datepicker: For goal deadline selection.
+- Canvas-Confetti: For celebratory effects.
+- React Switch: For theme toggling.
+- Sonner: For modern toast notifications.
+
 ![goal-tracker](https://github.com/user-attachments/assets/d9ca15b0-fec4-471d-98d8-bab89c72724d)
