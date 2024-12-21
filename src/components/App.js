@@ -122,20 +122,22 @@ export default function App() {
         progress={progress}
         setProgress={setProgress}
       />
-      <div className="app">
-        <GoalForm onAddGoal={handleAddGoal} />
-        <GoalList
-          filteredGoals={filteredGoals}
-          goals={
-            filteredGoals.length > 0 || searchQuery ? filteredGoals : goals
-          }
-          onCheck={handleCheck}
-          isDarkMode={isDarkMode}
-          updatedThemeForElement={updatedThemeForElement}
-          progress={progress}
-          setProgress={setProgress}
-        />
-      </div>
+      <main>
+        <div className="app">
+          <GoalForm onAddGoal={handleAddGoal} />
+          <GoalList
+            filteredGoals={filteredGoals}
+            goals={
+              filteredGoals.length > 0 || searchQuery ? filteredGoals : goals
+            }
+            onCheck={handleCheck}
+            isDarkMode={isDarkMode}
+            updatedThemeForElement={updatedThemeForElement}
+            progress={progress}
+            setProgress={setProgress}
+          />
+        </div>
+      </main>
       <Footer
         isDarkMode={isDarkMode}
         onToggle={handleDarkModeToggle}
