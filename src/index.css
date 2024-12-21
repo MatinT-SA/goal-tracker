@@ -379,7 +379,7 @@ body[data-theme="dark"] {
 
 .form-column {
   display: flex;
-  gap: 4.8rem;
+  gap: 5.2rem;
   align-items: center;
   justify-self: flex-start;
 }
