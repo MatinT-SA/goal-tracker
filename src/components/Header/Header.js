@@ -16,7 +16,7 @@ export function Header({
 
   return (
     <header className="header">
-      <img src="images/logo.png" alt="Logo" />
+      <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Logo" />
 
       <nav className="header-nav">
         <SearchBar onSearch={onSearch} searchQuery={searchQuery} />

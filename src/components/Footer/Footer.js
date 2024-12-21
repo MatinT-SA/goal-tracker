@@ -3,7 +3,7 @@ import Switch from "react-switch";
 
 export function Footer({ isDarkMode, onToggle, onReset }) {
   return (
-    <div className="footer-outer">
+    <footer className="footer-outer">
       <div className="footer">
         <div className="footer-links">
           <a
@@ -74,6 +74,6 @@ export function Footer({ isDarkMode, onToggle, onReset }) {
           />
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
