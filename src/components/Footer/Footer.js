@@ -25,7 +25,7 @@ export function Footer({ isDarkMode, onToggle, onReset }) {
         </div>
         <div className="footer-copyright">
           <p>
-            © 2024{" "}
+            © {new Date().getFullYear()}{" "}
             <a
               href="https://www.matintaherzadeh.ir/"
               target="_blank"
